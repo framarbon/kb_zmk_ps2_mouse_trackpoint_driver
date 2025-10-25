@@ -217,7 +217,7 @@ static void input_handler_ps2(const struct input_listener_ps2_config *config,
         }
 
         if (data->mouse.button_set != 0) {
-            for (int i = 0; i < ZMK_MOUSE_HID_NUM_BUTTONS; i++) {
+            for (int i = 0; i < ZMK_HID_MOUSE_NUM_BUTTONS; i++) {
                 if ((data->mouse.button_set & BIT(i)) != 0) {
                     zmk_hid_mouse_button_press(i);
                 }
@@ -225,7 +225,7 @@ static void input_handler_ps2(const struct input_listener_ps2_config *config,
         }
 
         if (data->mouse.button_clear != 0) {
-            for (int i = 0; i < ZMK_MOUSE_HID_NUM_BUTTONS; i++) {
+            for (int i = 0; i < ZMK_HID_MOUSE_NUM_BUTTONS; i++) {
                 if ((data->mouse.button_clear & BIT(i)) != 0) {
                     zmk_hid_mouse_button_release(i);
                 }
